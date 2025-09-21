@@ -1,31 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Alex Leet</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Contact — Alex Leet</title>
+  <meta name="description" content="Get in touch with me." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://alexleet.com/contact.html" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Contact Me" />
+  <meta property="og:description" content="Get in touch with me." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexleet.com/contact.html" />
+  <meta property="og:image" content="/images/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alex Leet",
+    "url": "https://alexleet.com/",
+    "sameAs": [
+      "https://github.com/AlexLeetDev",
+      "https://www.linkedin.com/in/alexleet"
+    ],
+    "jobTitle": "Computer Science Student"
+  }
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <h1>Contact Me</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <h1 class="brand">Alex <span>Leet</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-        <h2>Let's Connect</h2>
-        <p>Email: alexleet@example.com</p>
-        <p>GitHub: <a href="https://github.com/AlexLeetDev">AlexLeetDev</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/alexleet">linkedin.com/in/alexleet</a></p>
+  <main id="main">
+    <section class="section about">
+      <div class="container about-container">
+        <h2>Contact Me</h2>
+        <p>If you’d like to connect about opportunities, collaborations, or just to say hi, feel free to reach out:</p>
+
+        <ul class="tech-stack">
+          <li><a href="mailto:alex@alexleet.com">📧 Email</a></li>
+          <li><a href="https://github.com/AlexLeetDev" target="_blank" rel="noopener">💻 GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/alexleet" target="_blank" rel="noopener">🔗 LinkedIn</a></li>
+        </ul>
+      </div>
     </section>
+  </main>
 
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Alex Leet</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

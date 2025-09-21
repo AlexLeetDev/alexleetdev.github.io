@@ -3,32 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Leet | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
 
+    <title>Alex Leet — Computer Science Student & Developer</title>
+    <meta name="description" content="Computer Science student learning full-stack development and building projects that showcase my growth as a developer." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexleet.com/" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" /> 
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Alex Leet — Computer Science Student & Developer" />
+    <meta property="og:description" content="Featured projects, skills, and how I build software." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexleet.com/" />
+    <meta property="og:image" content="/images/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alex Leet",
+        "url": "https://alexleet.com/",
+        "sameAs": [
+            "https://github.com/AlexLeetDev",
+            "https://www.linkedin.com/in/alexleet"
+        ],
+        "jobTitle": "Computer Science Student"
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header -->
     <header>
-        <h1>Alex Leet</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1 class="brand">Alex <span>Leet</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Hi, I'm Alex! 👋</h2>
-        <p>A passionate developer specializing in full-stack web development and software engineering.</p>
-        <a href="projects.html" class="btn">View My Work</a>
-    </section>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Computer Science student building full-stack apps and learning advanced CS concepts</h1>
+                <p>I enjoy learning by doing — turning classwork and side projects into real, working software.</p>
+                <div class="cta">
+                    <a class="btn" href="projects.html">View Projects</a>
+                    <a class="btn btn-ghost" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </section> 
 
+        <!-- Featured Projects -->
+        <section class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <ul class="grid cards">
+                    <li class="card">
+                        <h3>Inventory App (Android)</h3>
+                        <p>Material 3 app with CRUD operations, SMS permission flow, and a clean, grid-based layout.</p>
+                        <p class="meta"><strong>Stack:</strong> Java, SQLite</p>
+                        <div class="actions">
+                            <a class="btn-sm" href="projects.html#inventory">Case Study</a>
+                            <a class="btn-sm" href="https://github.com/AlexLeetDev/InventoryApp-Android">Code</a>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <h3>OpenGL Nightstand Scene</h3>
+                        <p>Custom materials, emission, and shadow mapping for a stylized 3D scene running at 60 FPS.</p>
+                        <p class="meta"><strong>Stack:</strong> C++, OpenGL, GLSL</p>
+                        <div class="actions">
+                            <a class="btn-sm" href="projects.html#opengl">Overview</a>
+                            <a class="btn-sm" href="https://github.com/AlexLeetDev/CS330-OpenGL-Portfolio">Code</a>
+                        </div>
+                    </li>
+
+                    <li class="card">
+                        <h3>Full-Stack Web App</h3>
+                        <p>A full-stack application built with Node, Express, and Angular. Features RESTful APIs, MongoDB integration, and a responsive UI.</p>
+                        <p class="meta"><strong>Stack:</strong> Node.js, Express, Angular, MongoDB</p>
+                        <div class="actions">
+                            <a class="btn-sm" href="projects.html#fullstack">Case Study</a>
+                            <a class="btn-sm" href="https://github.com/AlexLeetDev/cs465-fullstack">Code</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section> 
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Alex Leet | <a href="https://github.com/AlexLeetDev">GitHub</a> | <a href="https://linkedin.com/in/alexleet">LinkedIn</a></p>
-    </footer>
+        <div class="container">
+            <p>© <span id="year"></span> Alex Leet</p>
+        </div>
+    </footer> 
 
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
+        

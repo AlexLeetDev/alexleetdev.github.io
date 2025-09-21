@@ -1,39 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Alex Leet</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Projects</title>
+  <meta name="description" content="Project case studies: Android Inventory App, OpenGL Nightstand Scene, and a Full-Stack Web App." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://alexleet.com/projects.html" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Projects" />
+  <meta property="og:description" content="Case studies and code for my featured projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexleet.com/projects.html" />
+  <meta property="og:image" content="/images/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <h1>My Projects</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1 class="brand">Alex <span>Leet</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-        <h2>Featured Projects</h2>
-        <div class="project">
-            <h3>Inventory Management System</h3>
-            <p>A simple inventory tracker built with Django and MySQL.</p>
-            <a href="https://github.com/AlexLeetDev/Inventory-Management-System">GitHub Repo</a>
-        </div>
-
-        <div class="project">
-            <h3>Portfolio Website</h3>
-            <p>My personal website to showcase my projects and skills.</p>
-            <a href="https://github.com/AlexLeetDev/Portfolio-Site">GitHub Repo</a>
-        </div>
+  <main id="main">
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <h2>Project Case Studies</h2>
+        <p class="meta">Selected work with a brief overview of what I built and what I learned. Each section links to the source code.</p>
+      </div>
     </section>
 
+    <!-- Inventory App (Android) -->
+    <section class="section" id="inventory">
+      <div class="container">
+        <h2>Inventory App (Android)</h2>
+        <p class="meta"><strong>Stack:</strong> Java, SQLite, <span title="Development Environment">Android Studio</span></p>
+        <p>
+          A mobile app for managing items with create, read, update, and delete functionality. I implemented an SMS
+          permission flow for notifications and used a clean, grid-based layout aligned with Material 3 principles.
+          Built and tested in <strong>Android Studio</strong> using the emulator and a physical device.
+        </p>
+        <ul class="meta">
+          <li><strong>What I learned:</strong> SQLite schema design, activity/fragment wiring, Android permission UX</li>
+          <li><strong>Highlights:</strong> Fast item lookup, clear navigation, consistent theming</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://github.com/AlexLeetDev/InventoryApp-Android">View Code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OpenGL Nightstand Scene -->
+    <section class="section" id="opengl">
+      <div class="container">
+        <h2>OpenGL Nightstand Scene</h2>
+        <p class="meta"><strong>Stack:</strong> C++, OpenGL, GLSL</p>
+        <p>
+          A real-time 3D scene with custom materials, emission, and shadow mapping. I worked with shader structs,
+          lighting models, and performance profiling to maintain smooth frame rates while achieving the look I wanted.
+        </p>
+        <ul class="meta">
+          <li><strong>What I learned:</strong> Shader design, light/material interactions, render performance tuning</li>
+          <li><strong>Highlights:</strong> Stable rendering, readable code structure, documented parameters</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://github.com/AlexLeetDev/CS330-OpenGL-Portfolio">View Code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-Stack Web App (CS465) -->
+    <section class="section" id="fullstack">
+      <div class="container">
+        <h2>Full-Stack Web App</h2>
+        <p class="meta"><strong>Stack:</strong> Node.js, Express, Angular, MongoDB</p>
+        <p>
+          A full-stack application with RESTful APIs, MongoDB integration, and a responsive Angular front end. I focused
+          on clean routing, modular controllers, and predictable data models to keep the codebase maintainable.
+        </p>
+        <ul class="meta">
+          <li><strong>What I learned:</strong> API design, Mongoose data modeling, client-server integration</li>
+          <li><strong>Highlights:</strong> CRUD flows end-to-end, consistent error handling, responsive UI</li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="https://github.com/AlexLeetDev/cs465-fullstack">View Code</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Alex Leet</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

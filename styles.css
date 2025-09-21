@@ -1,10 +1,24 @@
 /* ===== GLOBAL STYLES ===== */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    padding: 60px 20px;
 }
 
 /* ===== HEADER & NAVIGATION ===== */
@@ -31,13 +45,20 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    border-radius: 6px;
+    padding: 0.25rem 0.4rem;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+    text-decoration: underline;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: #444;
+    background: linear-gradient(135deg, #222, #444);
     color: white;
 }
 
@@ -50,6 +71,7 @@ nav ul li a {
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
+    transition: 0.3s ease;
 }
 
 /* ===== FOOTER ===== */
@@ -59,6 +81,7 @@ footer {
     background: #222;
     color: white;
     margin-top: 20px;
+    border-top: 1px solid #444;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -111,10 +134,28 @@ footer {
     border-radius: 5px;
     margin-top: 20px;
     transition: 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .btn:hover {
     background: #cc5500;
+}
+
+.btn:focus,
+nav a:focus {
+    outline: 2px solid #222;
+    outline offset: 2px;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-sm {
+    padding: 8px 12px;
+    border-radius: 6px;
 }
 
 /* ===== TECH STACK ===== */
@@ -163,4 +204,82 @@ footer {
     margin: 2rem 0;
     padding-top: 1.5rem;
     border-top: 1px solid #ddd;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+}
+
+.skip-link:focus {
+    left: 16px;
+    top: 16px;
+    background: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* ===== PROJECT CARDS ===== */
+.project-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2rem;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card .meta {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.card .actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.card .btn-sm {
+  background: #ff6600;
+  color: white;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.card .btn-sm:hover {
+  background: #cc5500;
 }
