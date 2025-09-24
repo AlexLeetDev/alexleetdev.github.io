@@ -413,7 +413,8 @@ pre code {
 .gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;      
-  object-fit: cover;    
+  object-fit: contain;
+  background: #fafafa;    
   display: block;
 }
 
