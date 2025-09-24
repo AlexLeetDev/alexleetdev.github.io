@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Android Inventory App — Alex Leet</title>
+    <meta name="description" content="Case study of an Android inventory app with a simple design, item management, and optional SMS notifications." />
+
+    <link rel="canonical" href="https://alexleet.com/inventory-app.html" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="fonts.css" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Android Inventory App — Case Study" />
+    <meta property="og:description" content="A simple inventory app for Android with item tracking and SMS alerts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexleet.com/inventory-app.html" />
+    <meta property="og:image" content="/images/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" /> 
+</head>
+
+<body class="project-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <h1 class="brand"><span class="logo">AL</span> Alex Leet</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main id="main">
+        <!-- Project Header -->
+        <section class="section">
+            <div class="container">
+                <p class="meta"><a href="projects.html">← Back to Projects</a></p>
+                <h1>Android Inventory App</h1>
+                <p class="meta"><strong>Built with:</strong> Java, SQLite, Android Studio</p>
+                <div class="actions" style="margin-top:.75rem;">
+                    <a class="btn-sm" href="https://github.com/AlexLeetDev/InventoryApp-Android" target="_blank" rel="noopener">View Code</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                <p>
+                    This Android app was built to make managing items simple and efficient. It lets you <strong>add</strong> new inventory, <strong>view</strong> what's already stored, <strong>update</strong> item quantities, and <strong>delete</strong> things you no longer need. Together these actions cover the full set of <em>CRUD</em> functionality (Create, Read, Update, Delete), which is a core concept in many apps. 
+                </p>
+                <p>
+                    The app also includes an optional text message feature that can send you a notification when stock gets low. The design is simple and easy to use, following modern Android style guidelines for a clean look.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Key Features -->
+        <section class="section">
+            <div class="container">
+                <h2>Key Features</h2>
+                <ul class="meta">
+                    <li><strong>Full item management (CRUD):</strong> Add, view, update, and remove items with ease.</li>
+                    <li><strong>Login & Sign Up:</strong> Simple authentication flow for secure access.</li>
+                    <li><strong>Dashboard:</strong> Grid-style layout showing all items at a glance with quick actions.</li>
+                    <li><strong>SMS Notifications:</strong> Optional alerts for low stock levels.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Design & Development -->
+        <section class="section">
+            <div class="container">
+                <h2>Design & Development</h2>
+                <p>
+                    The app was designed with a focus on clarity and simplicity. Screens are consistent, with clear labels, easy-to-read text, and logical navigation. The dashboard uses a grid view so users can quickly see and manage their items. Buttons for updating or deleting entries are placed right next to each item, making the workflow fast and intuitive.
+                </p>
+                <p>
+                    Behind the scenes, the app stores data locally using SQLite, ensuring that items are saved between sessions. A lightweight login system provides secure access, and the optional SMS feature is handled through Android's built-in permissions to keep the app safe and reliable.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Screenshots -->
+        <section class="section">
+            <div class="container">
+                <h2>Screenshots</h2>
+                <ul class="gallery">
+                    <li>
+                        <a href="images/inventory-app/01_login_screen.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/01_login_screen.png" alt="Login Screen" loading="lazy">
+                        </a>
+                        <p class="cap">🔐 Login Screen</p>
+                    </li>
+                    <li>
+                        <a href="images/inventory-app/02_create_account.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/02_create_account.png" alt="Create Account" loading="lazy">
+                        </a>
+                        <p class="cap">🧾 Create Account</p>
+                    </li>
+                    <li>
+                        <a href="images/inventory-app/03_dashboard_empty.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/04_item_added.png" alt="Item Added" loading="lazy">
+                        </a>
+                        <p class="cap">🧺 Empty Dashboard</p>
+                    </li>
+                    <li>
+                        <a href="images/inventory-app/04_item_added.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/04_item_added.png" alt="Item Added" loading="lazy">
+                        </a>
+                        <p class="cap">➕ Item Added</p>
+                    </li>
+                    <li>
+                        <a href="images/inventory-app/05_sms_permission.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/05_sms_permission.png" alt="SMS Permission Screen" loading="lazy">
+                        </a>
+                        <p class="cap">📲 SMS Permission</p>
+                    </li>
+                    <li>
+                        <a href="images/inventory-app/09_test_sms.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-app/09_test_sms.png" alt="Test SMS Sent" loading="lazy">
+                        </a>
+                        <p class="cap">📨 Test SMS Sent</p>
+                    </li>
+                </ul>
+            </div>
+        </section> 
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Alex Leet</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
