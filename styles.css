@@ -277,62 +277,68 @@ nav a:focus-visible {
 }
 
 /* ===== PROJECT CARDS ===== */
-.project-list {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    margin-top: 2rem;
+.project-list,
+.grid.cards {
+  list-style: none;                 
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1rem;             
 }
 
+/* Card container */
 .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: left;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+.card:focus-within {
+  outline: 2px solid #ff6600;
+  outline-offset: 2px;
 }
 
 .card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #222;
+  margin: 0 0 0.4rem;
+  color: #222;
+  line-height: 1.25;
 }
-
 .card p {
-  margin: 0.5rem 0;
+  margin: 0 0 0.6rem;
   color: #555;
   line-height: 1.5;
 }
-
 .card .meta {
   font-size: 0.9rem;
   color: #777;
 }
 
 .card .actions {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap;                  
 }
 
 .card .btn-sm {
   background: #ff6600;
-  color: white;
+  color: #fff;
   padding: 8px 12px;
   font-size: 0.85rem;
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.3s ease;
 }
-
 .card .btn-sm:hover {
   background: #cc5500;
 }
