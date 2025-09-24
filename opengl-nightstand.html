@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>OpenGL Nightstand Scene — Alex Leet</title>
+  <meta name="description" content="Case study of a 3D nightstand scene built with C++ and OpenGL." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://alexleet.com/opengl-nightstand.html" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="fonts.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="OpenGL Nightstand Scene — Case Study" />
+  <meta property="og:description" content="A 3D scene of a nightstand built with C++ and OpenGL. Includes a lamp, water bottle, digital clock, and book." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alexleet.com/opengl-nightstand.html" />
+  <meta property="og:image" content="/images/og-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+<body class="project-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <h1 class="brand"><span class="logo">AL</span> Alex Leet</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Project Header -->
+    <section class="section">
+      <div class="container">
+        <p class="meta"><a href="projects.html">← Back to Projects</a></p>
+        <h1>OpenGL Nightstand Scene</h1>
+        <p class="meta"><strong>Stack:</strong> C++, OpenGL, GLSL</p>
+        <div class="actions" style="margin-top: .75rem;">
+          <a class="btn-sm" href="https://github.com/AlexLeetDev/opengl-nightstand-scene" target="_blank" rel="noopener">View Code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview -->
+    <section class="section">
+      <div class="container">
+        <h2>Overview</h2>
+        <p>
+          This project features a fully interactive 3D scene built with modern OpenGL and C++. It recreates the top of a nightstand using low-polygon shapes, realistic textures, and simple dynamic lighting.
+        </p>
+        <p>
+          I chose a nightstand so I could combine familiar objects while practicing core graphics skills: textures, materials, lighting, and camera controls. The four main objects are:
+        </p>
+        <ul class="meta">
+            <li>A lamp with a pull chain and glowing bulb</li>
+            <li>A bottled water with a transparent texture and ridged body</li>
+            <li>A digital clock with a seven-segment style display</li>
+            <li>A book made from simple boxes with a leather texture</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+      <div class="container">
+        <h2>Features</h2>
+
+        <h3>Object Modeling</h3>
+        <ul class="meta">
+          <li>Built from basic shapes: plane, box, sphere, cylinder, tapered cylinder</li>
+          <li>Composite models (e.g., lamp, bottle) combine multiple primitives</li>
+          <li>Custom material values (diffuse, specular, shininess)</li>
+        </ul>
+
+        <h3>Textures &amp; Materials</h3>
+        <ul class="meta">
+          <li>Materials include brass, fabric, leather, plastic, and woodgrain</li>
+          <li>Transparent textures and UV scaling for simple realism</li>
+          <li>Custom material values (diffuse, specular, shininess)</li>
+        </ul>
+
+        <h3>Lighting &amp; Effects</h3>
+        <ul class="meta">
+          <li>Spotlight for the lamp beam</li>
+          <li>Point light for the bulb glow with a subtle flicker</li>
+          <li>Fill light for ambient room light</li>
+          <li>Phong shading (ambient, diffuse, specular)</li>
+          <li>Toggle lamp on/off with the <strong>L</strong> key</li>
+        </ul>
+
+        <h3>Camera Navigation</h3>
+        <ul class="meta">
+          <li><strong>WASD</strong> to move (X/Z), <strong>Q/E</strong> for vertical (Y)</li>
+          <li>Mouse to look around; scroll wheel adjusts movement speed</li>
+          <li>Switch between Perspective (<strong>P</strong>) and Orthographic (<strong>O</strong>) views</li>
+          <li><strong>R</strong> resets the camera</li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Code Structure -->
+    <section class="section">
+      <div class="container">
+        <h2>Code Structure</h2>
+        <pre><code>
+├── MainCode.cpp             # Entry point; initializes OpenGL and main loop
+├── SceneManager.cpp         # Prepares and renders 3D scene elements
+├── SceneManager.h           # SceneManager class interface
+├── ViewManager.cpp          # Handles camera movement and projection modes
+├── ViewManager.h            # ViewManager class interface
+├── LightTypes.h             # Structs for spotlights and point lights
+├── ShaderManager.*          # Shader handling
+├── textures/                # Image files for scene materials
+├── shaders/                 # Vertex and fragment GLSL shaders
+        </code></pre>
+        <p class="meta">
+          Full source code available on
+          <a href="https://github.com/AlexLeetDev/opengl-nightstand-scene" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Controls -->
+    <section class="section">
+      <div class="container">
+        <h2>Controls</h2>
+
+        <h3>Movement (WASD + Vertical)</h3>
+        <table class="meta" style="width:100%;max-width:700px;">
+          <thead><tr><th style="text-align:left;">Action</th><th style="text-align:left;">Input</th></tr></thead>
+          <tbody>
+            <tr><td>Move Forward</td><td><code>W</code></td></tr>
+            <tr><td>Move Backward</td><td><code>S</code></td></tr>
+            <tr><td>Strafe Left</td><td><code>A</code></td></tr>
+            <tr><td>Strafe Right</td><td><code>D</code></td></tr>
+            <tr><td>Move Up</td><td><code>Q</code></td></tr>
+            <tr><td>Move Down</td><td><code>E</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>Camera Interaction</h3>
+        <table class="meta" style="width:100%;max-width:700px;">
+          <thead><tr><th style="text-align:left;">Action</th><th style="text-align:left;">Input</th></tr></thead>
+          <tbody>
+            <tr><td>Look Around</td><td>Mouse Movement</td></tr>
+            <tr><td>Adjust Move Speed</td><td>Mouse Scroll</td></tr>
+          </tbody>
+        </table>
+
+        <h3>View &amp; Toggles</h3>
+        <table class="meta" style="width:100%;max-width:700px;">
+          <thead><tr><th style="text-align:left;">Action</th><th style="text-align:left;">Input</th></tr></thead>
+          <tbody>
+            <tr><td>Toggle Perspective</td><td><code>P</code></td></tr>
+            <tr><td>Toggle Orthographic</td><td><code>O</code></td></tr>
+            <tr><td>Reset Camera</td><td><code>R</code></td></tr>
+            <tr><td>Toggle Lamp Light</td><td><code>L</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <!-- Screenshots -->
+    <section class="section">
+      <div class="container">
+        <h2>Screenshots</h2>
+        <ul class="gallery">
+          <li>
+            <a href="images/opengl-nightstand/overview.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/overview.png" alt="Full scene overview" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Full scene overview</p>
+          </li>
+          <li>
+            <a href="images/opengl-nightstand/lamp_on.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/lamp_on.png" alt="Lamp on (light activated)" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Lamp on</p>
+          </li>
+          <li>
+            <a href="images/opengl-nightstand/lamp_off.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/lamp_off.png" alt="Lamp off (light deactivated)" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Lamp off</p>
+          </li>
+          <li>
+            <a href="images/opengl-nightstand/bottle_closeup.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/bottle_closeup.png" alt="Water bottle detail" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Bottle detail</p>
+          </li>
+          <li>
+            <a href="images/opengl-nightstand/clock_display.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/clock_display.png" alt="Clock display" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Clock display</p>
+          </li>
+          <li>
+            <a href="images/opengl-nightstand/book_cutaway.png" target="_blank" rel="noopener">
+              <img src="images/opengl-nightstand/book_cutaway.png" alt="Book cutaway" loading="lazy" decoding="async">
+            </a>
+            <p class="cap">Book cutaway</p>
+          </li>
+        </ul>
+      </div>
+    </section> 
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Alex Leet</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
