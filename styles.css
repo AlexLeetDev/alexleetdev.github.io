@@ -413,9 +413,13 @@ pre code {
 .gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;      
-  object-fit: contain;
-  background: #fafafa;    
+  object-fit: cover;    
   display: block;
+}
+
+body.inventory-page .gallery img {
+    object-fit: contain;
+    background: #fafafa;
 }
 
 .gallery .cap {
