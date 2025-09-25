@@ -491,13 +491,13 @@ body.project-page ul {
 
 /* ===== DARK MODE (body.dark-mode) ===== */
 
-/* Base */
+/* === Base === */
 body.dark-mode {
   background: #121212;
   color: #e6e6e6;
 }
 
-/* Header & Nav */
+/* === Header & Navigation === */
 body.dark-mode header {
   background: #1b1b1b;
   color: #e6e6e6;
@@ -509,20 +509,20 @@ body.dark-mode nav a[aria-current="page"] {
   text-decoration-color: #ff7a1a;
 }
 
-/* Hero */
+/* === Hero Section === */
 body.dark-mode .hero {
   background: linear-gradient(135deg, #161616, #262626);
   color: #f0f0f0;
 }
 
-/* Footer */
+/* === Footer === */
 body.dark-mode footer {
   background: #1b1b1b;
   color: #cfcfcf;
   border-top-color: #2a2a2a;
 }
 
-/* Buttons */
+/* === Buttons === */
 body.dark-mode .btn,
 body.dark-mode .card .btn-sm {
   background: #ff7a1a;
@@ -533,8 +533,17 @@ body.dark-mode .btn:hover,
 body.dark-mode .card .btn-sm:hover {
   background: #e36910;
 }
+/* Ghost buttons */
+body.dark-mode .btn-ghost {
+  color: #e6e6e6;
+  border-color: #333;
+}
+body.dark-mode .btn-ghost:hover {
+  color: #ff7a1a;
+  border-color: #ff7a1a;
+}
 
-/* Cards (project tiles) */
+/* === Cards (Project Tiles) === */
 body.dark-mode .card {
   background: #1a1a1a;
   border-color: #2b2b2b;
@@ -544,7 +553,7 @@ body.dark-mode .card h3 { color: #fafafa; }
 body.dark-mode .card p { color: #cfcfcf; }
 body.dark-mode .card .meta { color: #a6a6a6; }
 
-/* Tech stack chips */
+/* === Tech Stack Chips === */
 body.dark-mode .tech-stack {
   border-top-color: #2b2b2b;
 }
@@ -555,7 +564,7 @@ body.dark-mode .tech-stack li {
   color: #dcdcdc;
 }
 
-/* Screenshot gallery */
+/* === Screenshot Gallery === */
 body.dark-mode .gallery li {
   background: #1a1a1a;
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
@@ -566,12 +575,18 @@ body.dark-mode .gallery .cap {
   border-top-color: #2b2b2b;
 }
 
-/* About page image ring */
-body.dark-mode .profile-pic {
-  border-color: #ff7a1a;
-}
+/* === About Page === */
+body.dark-mode .about { background: #121212; }
+body.dark-mode .about-text h2 { color: #f3f3f3; }
+body.dark-mode .about-text p  { color: #d1d1d1; }
+body.dark-mode .profile-pic { border-color: #ff7a1a; }
 
-/* Code blocks */
+/* === Contact Page (optional if using contact-page body class) === */
+body.dark-mode.contact-page h2 { color: #f3f3f3; }
+body.dark-mode.contact-page p  { color: #d1d1d1; }
+body.dark-mode hr { border-color: #2b2b2b; }
+
+/* === Code Blocks === */
 body.dark-mode pre {
   background: #1b1b1b;
   color: #e6e6e6;
@@ -579,7 +594,7 @@ body.dark-mode pre {
 }
 body.dark-mode pre code { color: #e6e6e6; }
 
-/* Links + focus */
+/* === Links & Focus States === */
 body.dark-mode a { color: #ff9a4d; }
 body.dark-mode a:hover { color: #ff7a1a; }
 body.dark-mode .btn:focus,
@@ -591,7 +606,7 @@ body.dark-mode nav a:focus-visible {
   outline-color: #ff7a1a;
 }
 
-/* Borders & rules */
+/* === Borders & Dividers === */
 body.dark-mode .tech-stack,
 body.dark-mode .cta-work {
   border-top-color: #2b2b2b;
