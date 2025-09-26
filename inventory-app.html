@@ -7,9 +7,13 @@
     <title>Android Inventory App — Alex Leet</title>
     <meta name="description" content="Case study of an Android inventory app with a simple design, item management, and optional SMS notifications." />
 
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://alexleet.com/inventory-app.html" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Android Inventory App — Case Study" />
@@ -45,7 +49,10 @@
         <!-- Project Header -->
         <section class="section">
             <div class="container">
-                <p class="meta"><a href="projects.html">← Back to Projects</a></p>
+                <a href="projects.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+
                 <h1>Android Inventory App</h1>
                 <p class="meta"><strong>Built with:</strong> Java, SQLite, Android Studio</p>
                 <div class="actions" style="margin-top:.75rem;">
@@ -140,42 +147,30 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© <span id="year"></span> Alex Leet</p>
-        </div>
-    </footer>
-    
-    <script>
-    // Auto-update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-    // Dark mode toggle
-    (function () {
-      const key = 'dark-mode';
-      const toggle = document.getElementById('darkModeToggle');
-      const prefersDark = window.matchMedia &&
-                          window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      // Initialize from saved preference or system setting
-      const saved = localStorage.getItem(key);
-      const shouldDark = saved === 'true' || (saved === null && prefersDark);
-      if (shouldDark) document.body.classList.add('dark-mode');
+    <div class="footer-social">
+      <a href="https://github.com/alexleetdev" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/alexleet/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
 
-      if (toggle) {
-        const on = document.body.classList.contains('dark-mode');
-        toggle.textContent = on ? '☀️ Light Mode' : '🌙 Dark Mode';
-        toggle.setAttribute('aria-pressed', String(on));
+    <a href="#top" class="back-link">
+      <i class="fas fa-arrow-up"></i> Back to top
+    </a>
 
-        toggle.addEventListener('click', () => {
-          document.body.classList.toggle('dark-mode');
-          const nowOn = document.body.classList.contains('dark-mode');
-          localStorage.setItem(key, nowOn);
-          toggle.textContent = nowOn ? '☀️ Light Mode' : '🌙 Dark Mode';
-          toggle.setAttribute('aria-pressed', String(nowOn));
-        });
-      }
-    })();
-  </script>
+    <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

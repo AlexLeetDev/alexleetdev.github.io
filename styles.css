@@ -148,12 +148,126 @@ body.dark-mode #darkModeToggle:focus-visible {
 
 /* ===== FOOTER ===== */
 footer {
-    text-align: center;
-    padding: 10px;
-    background: #222;
-    color: white;
-    margin-top: 20px;
-    border-top: 1px solid #444;
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: #aaa;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ff7a1a;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+footer a:hover {
+  color: #fff;
+}
+
+.footer-links,
+.footer-social {
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  font-size: 1.3rem;
+}
+.footer-social a {
+  margin: 0 8px;
+}
+.footer-social i {
+  vertical-align: middle;
+}
+
+/* Dark mode footer */
+body.dark-mode footer {
+  background: #1b1b1b;
+  color: #cfcfcf;
+  border-top-color: #2a2a2a;
+}
+body.dark-mode footer a:hover {
+  color: #ff7a1a;
+}
+
+/* ===== BACK LINKS (e.g., Back to top, Back to projects) ===== */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;                
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 20px;     
+  background: transparent;
+  color: #aaa;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: #ff7a1a;
+  color: #fff;
+  border-color: #ff7a1a;
+  transform: translateY(-2px);
+}
+
+/* Dark mode variant */
+body.dark-mode .back-link {
+  border-color: #333;
+  color: #ccc;
+}
+body.dark-mode .back-link:hover {
+  background: #ff7a1a;
+  border-color: #ff7a1a;
+  color: #fff;
+}
+
+/* Contact Links */
+.contact-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;             
+  justify-content: center; 
+  flex-wrap: wrap;        
+}
+
+.contact-links li {
+  margin: 0;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;               
+  padding: 10px 16px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.contact-links a:hover {
+  background: #ff7a1a;
+  color: #fff;
+  border-color: #ff7a1a;
+  transform: translateY(-2px);
+}
+
+/* Dark mode adjustments */
+body.dark-mode .contact-links a {
+  border-color: #333;
+  color: #ccc;
+}
+body.dark-mode .contact-links a:hover {
+  background: #ff7a1a;
+  border-color: #ff7a1a;
+  color: #fff;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -495,6 +609,16 @@ body.project-page ul {
 body.dark-mode {
   background: #121212;
   color: #e6e6e6;
+}
+
+/* === Headings === */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f0f0f0;
 }
 
 /* === Header & Navigation === */

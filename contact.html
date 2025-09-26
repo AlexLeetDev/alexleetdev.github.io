@@ -13,6 +13,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Contact Me" />
@@ -61,54 +62,60 @@
   <main id="main">
     <section class="section about">
       <div class="container about-container">
+
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+
         <h2>Contact Me</h2>
         <p>If you’d like to connect about opportunities, collaborations, or just to say hi, feel free to reach out:</p>
 
-        <ul class="tech-stack">
-          <li><a href="mailto:alex@alexleet.com">📧 Email</a></li>
-          <li><a href="https://github.com/AlexLeetDev" target="_blank" rel="noopener">💻 GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/alexleet" target="_blank" rel="noopener">🔗 LinkedIn</a></li>
+        <ul class="contact-links">
+          <li>
+            <a href="mailto:alex@alexleet.com" target="_blank">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/AlexLeetDev" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/alexleet" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </li>
         </ul>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Alex Leet</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/alexleetdev" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/alexleet/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <a href="#top" class="back-link">
+      <i class="fas fa-arrow-up"></i> Back to top
+    </a>
+
+    <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Auto-update footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Dark mode toggle
-    (function () {
-      const key = 'dark-mode';
-      const toggle = document.getElementById('darkModeToggle');
-      const prefersDark = window.matchMedia &&
-                          window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      // Initialize from saved preference or system setting
-      const saved = localStorage.getItem(key);
-      const shouldDark = saved === 'true' || (saved === null && prefersDark);
-      if (shouldDark) document.body.classList.add('dark-mode');
-
-      if (toggle) {
-        const on = document.body.classList.contains('dark-mode');
-        toggle.textContent = on ? '☀️ Light Mode' : '🌙 Dark Mode';
-        toggle.setAttribute('aria-pressed', String(on));
-
-        toggle.addEventListener('click', () => {
-          document.body.classList.toggle('dark-mode');
-          const nowOn = document.body.classList.contains('dark-mode');
-          localStorage.setItem(key, nowOn);
-          toggle.textContent = nowOn ? '☀️ Light Mode' : '🌙 Dark Mode';
-          toggle.setAttribute('aria-pressed', String(nowOn));
-        });
-      }
-    })();
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
