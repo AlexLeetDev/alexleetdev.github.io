@@ -94,34 +94,52 @@ nav a[aria-current="page"] {
     text-decoration-thickness: 2px;
 }
 
-/* Dark mode toggle — align with nav */
+/* Dark mode toggle */
 #darkModeToggle {
-  margin-left: 1rem;            
-  color: #fff;                  
-  border-color: #444;           
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;                 
+  margin-left: 1rem;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f4f4;      
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all .2s ease;
 }
 
 #darkModeToggle:hover,
 #darkModeToggle:focus-visible {
-  color: #ff6600;              
-  border-color: #ff6600;
+  background: #ff7a1a;
+  border-color: #ff7a1a;
+  color: #fff;
+  outline: 0;               
 }
 
+/* Dark mode variant */
 body.dark-mode #darkModeToggle {
-  color: #e6e6e6;
-  border-color: #333;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #ddd;
 }
 body.dark-mode #darkModeToggle:hover,
 body.dark-mode #darkModeToggle:focus-visible {
-  color: #ff7a1a;
+  background: #ff7a1a;
   border-color: #ff7a1a;
+  color: #fff;
+  outline-color: #ff7a1a;   
 }
 
+/* Small screens */
 @media (max-width: 760px) {
   .header-inner { flex-wrap: wrap; }
   #darkModeToggle {
     margin-left: 0;
-    margin-top: .5rem;         
+    margin-top: .5rem;
   }
 }
 
@@ -131,19 +149,6 @@ body.dark-mode #darkModeToggle:focus-visible {
     padding: 100px 20px;
     background: linear-gradient(135deg, #222, #444);
     color: white;
-}
-
-.hero .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff6600;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-    border: 1px solid transparent;
 }
 
 /* ===== FOOTER ===== */
@@ -192,84 +197,6 @@ body.dark-mode footer a:hover {
   color: #ff7a1a;
 }
 
-/* ===== BACK LINKS (e.g., Back to top, Back to projects) ===== */
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;                
-  padding: 8px 14px;
-  font-size: 0.9rem;
-  border: 1px solid #444;
-  border-radius: 20px;     
-  background: transparent;
-  color: #aaa;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.back-link:hover {
-  background: #ff7a1a;
-  color: #fff;
-  border-color: #ff7a1a;
-  transform: translateY(-2px);
-}
-
-/* Dark mode variant */
-body.dark-mode .back-link {
-  border-color: #333;
-  color: #ccc;
-}
-body.dark-mode .back-link:hover {
-  background: #ff7a1a;
-  border-color: #ff7a1a;
-  color: #fff;
-}
-
-/* Contact Links */
-.contact-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 1rem;             
-  justify-content: center; 
-  flex-wrap: wrap;        
-}
-
-.contact-links li {
-  margin: 0;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;               
-  padding: 10px 16px;
-  border: 1px solid #444;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #aaa;
-  font-size: 0.95rem;
-  transition: all 0.2s ease;
-}
-
-.contact-links a:hover {
-  background: #ff7a1a;
-  color: #fff;
-  border-color: #ff7a1a;
-  transform: translateY(-2px);
-}
-
-/* Dark mode adjustments */
-body.dark-mode .contact-links a {
-  border-color: #333;
-  color: #ccc;
-}
-body.dark-mode .contact-links a:hover {
-  background: #ff7a1a;
-  border-color: #ff7a1a;
-  color: #fff;
-}
-
 /* ===== ABOUT SECTION ===== */
 .about {
     text-align: center;
@@ -309,50 +236,110 @@ body.dark-mode .contact-links a:hover {
     line-height: 1.6;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTONS (PRIMARY) ===== */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #ff6600;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: 0.3s ease;
-    border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #ff6600;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn:hover { background: #cc5500; }
+.btn:focus-visible { outline: 3px solid #ff6600; outline-offset: 2px; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+/* Size modifier */
+.btn-sm { padding: 8px 12px; border-radius: 6px; }
+
+/* ===== BUTTONS (SECONDARY) ===== */
+/* Use for back links + contact links */
+.btn-secondary,
+.back-link,
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;                /* pill shape */
+  border: 1px solid #ccc;
+  background: #f4f4f4;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
 }
 
-.btn:hover {
-    background: #cc5500;
+/* Hover / active */
+.btn-secondary:hover,
+.back-link:hover,
+.contact-links a:hover {
+  background: #ff7a1a;
+  border-color: #ff7a1a;
+  color: #fff;
+  text-decoration: none;
+}
+.btn-secondary:active,
+.back-link:active,
+.contact-links a:active {
+  transform: translateY(0);
 }
 
-.btn-ghost {
-    background: transparent;
-    color: #333;
-    border: 1px solid #ddd;
+/* Spacing */
+.back-link { margin: 1rem 0 1.25rem; }
+
+/* Focus visibility */
+.btn-secondary:focus-visible,
+.back-link:focus-visible,
+.contact-links a:focus-visible {
+  outline: 3px solid #ff6600;
+  outline-offset: 2px;
 }
 
-.btn-sm {
-    padding: 8px 12px;
-    border-radius: 6px;
+/* Icon alignment */
+.btn i,
+.btn-secondary i,
+.back-link i,
+.contact-links a i { line-height: 1; }
+
+/* ===== Dark Mode variants ===== */
+body.dark-mode .btn { background: #ff7a1a; }
+body.dark-mode .btn:hover { background: #e36910; }
+body.dark-mode .btn:focus-visible { outline-color: #ff7a1a; }
+
+body.dark-mode .btn-secondary,
+body.dark-mode .back-link,
+body.dark-mode .contact-links a {
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #ddd;
+}
+body.dark-mode .btn-secondary:hover,
+body.dark-mode .back-link:hover,
+body.dark-mode .contact-links a:hover {
+  background: #ff7a1a;
+  border-color: #ff7a1a;
+  color: #fff;
+}
+body.dark-mode .btn-secondary:focus-visible,
+body.dark-mode .back-link:focus-visible,
+body.dark-mode .contact-links a:focus-visible {
+  outline-color: #ff7a1a;
 }
 
-.btn:focus,
-nav a:focus {
-    outline: 2px solid #222;
-    outline-offset: 2px;
-}
-
-.btn:focus-visible,
-nav a:focus-visible {
-    outline: 3px solid #ff6600;
-    outline-offset: 2px;
-}
-
-.btn[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
+/* Contact Links container (layout only) */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 /* ===== TECH STACK ===== */
