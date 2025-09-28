@@ -77,8 +77,75 @@
                     The site showcases trip packages that were hypothetical—created only for this project—but they served as a practical way to work with listings, details, and updates while learning how to manage data across the full stack.  
                 </p>
             </div>
-        </section> 
+        </section>
+
+        <!-- Development Journey -->
+        <section class="section">
+          <div class="container">
+            <h2>Development Journey</h2>
+            <p>
+              The project started with a few static pages. From there, I added features one at a time until it worked like a real app:
+            </p>
+            <ol class="meta">
+              <li><strong>Static beginnings:</strong> Simple pages and styles.</li>
+              <li><strong>Server pages:</strong> Switched to Express routes and Handlebars templates to reuse layouts.</li>
+              <li><strong>Database:</strong> Moved trip data into MongoDB so content wasn't hard-coded.</li>
+              <li><strong>API layer:</strong> Built REST endpoints to list, get, create, update, and delete trips.</li>
+              <li><strong>Admin dashboard:</strong> Added a small Angular app that talks to the API for easy CRUD from the browser.</li>
+            </ol>
+            <p>Building in stages kept things clear and made testing easier at each step.</p>
+          </div>
+        </section>
         
+        <!-- Architecture -->
+        <section class="section">
+          <div class="container">
+            <h2>Architecture</h2>
+
+            <pre><code>
+[ Browser ]
+   ├─ Public site (Express + Handlebars)
+   └─ Admin (Angular SPA) ──────► [ REST API (Express) ] ──────► [ MongoDB ]    
+            </code></pre>
+            <p class="meta">
+              Clear separation: the public site renders pages, the admin uses Angular, the API serves both, and MongoDB stores the trip data.
+            </p>
+
+            <h3>Folders at a glance</h3>
+            <pre><code>
+travlr/
+├─ app_server/   # Views/controllers (public site)
+├─ app_api/      # API routes + models (trips)
+├─ views/        # Handlebars templates
+├─ public/       # Images, CSS
+└─ app.js        # App entry point
+            </code></pre>
+          </div>
+        </section>
+        
+        <!-- API Summary -->
+        <section class="section">
+          <div class="container">
+            <h2>API Summary</h2>
+            <table class="meta" style="width:100%;max-width:860px;">
+              <thead>
+                <tr>
+                  <th style="text-align:left;">Method</th>
+                  <th style="text-align:left;">Path</th>
+                  <th style="text-align:left;">Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>GET</td><td><code>/api/trips</code></td><td>List all trips</td></tr>
+                <tr><td>GET</td><td><code>/api/trips/:id</code></td><td>Get one trip</td></tr>
+                <tr><td>POST</td><td><code>/api/trips</code></td><td>Create a trip</td></tr>
+                <tr><td>PUT</td><td><code>/api/trips/:id</code></td><td>Update a trip</td></tr>
+                <tr><td>DELETE</td><td><code>/api/trips/:id</code></td><td>Delete a trip</td></tr>
+              </tbody>
+            </table>
+            <p class="meta">Tested in the browser and with Postman during development.</p>
+          </div>
+        </section>    
         
     </main>
 
