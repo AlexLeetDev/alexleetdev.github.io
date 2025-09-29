@@ -37,6 +37,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    min-height: 64px;
 }
 
 h1.brand { margin: 0; }
@@ -48,68 +49,80 @@ h1.brand { margin: 0; }
     font-weight: bold;
 }
 
+/* Logo badge */
 .brand .logo {
     background: #ff6600;
     color: #fff;
     font-weight: 700;
     border-radius: 50%;
-    padding: 0.25rem 0.55rem;
+    width: 28px;
+    height: 28px;
+    padding: 0;
     margin-right: 0.6rem;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
 }
 
+/* Nav alignment */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 
 nav ul li {
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
+/* Nav links */
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 6px;
     padding: 0.25rem 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
 }
 
 nav ul li a:hover {
     color: #ff6600;
     text-decoration: underline;
-    text-underline-offset: 4px;
 }
 
 nav a[aria-current="page"] {
     color: #ff6600;
     text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 2px;
 }
 
 /* Dark mode toggle */
 #darkModeToggle {
   display: inline-flex;
   align-items: center;
-  gap: 6px;                 
+  gap: 6px;
   margin-left: 1rem;
   padding: 8px 14px;
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background: #f4f4f4;      
-  color: #333;
+  border: 1px solid #444;
+  background: #2e2e2e;     /* Soft charcoal */
+  color: #fff;
   cursor: pointer;
   text-decoration: none;
   transition: all .2s ease;
+  line-height: 1;
 }
 
 #darkModeToggle:hover,
@@ -117,7 +130,7 @@ nav a[aria-current="page"] {
   background: #ff7a1a;
   border-color: #ff7a1a;
   color: #fff;
-  outline: 0;               
+  outline: 0;
 }
 
 /* Dark mode variant */
@@ -126,12 +139,13 @@ body.dark-mode #darkModeToggle {
   border: 1px solid #444;
   color: #ddd;
 }
+
 body.dark-mode #darkModeToggle:hover,
 body.dark-mode #darkModeToggle:focus-visible {
   background: #ff7a1a;
   border-color: #ff7a1a;
   color: #fff;
-  outline-color: #ff7a1a;   
+  outline-color: #ff7a1a;
 }
 
 /* Small screens */
@@ -506,20 +520,62 @@ body.dark-mode .contact-links a:focus-visible {
     }
 }
 
-/* ===== CODE BLOCKS ===== */
+/* === Code & Table Blocks === */
+
+/* Pre/code blocks (light mode) */
 pre {
-  overflow: auto;              
-  background-color: #f5f5f5;   
-  padding: 1rem;               
-  border-radius: 6px;          
-  margin: 1.5rem 0;            
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: .75rem 1rem;
+  overflow-x: auto;
+  font-size: .9rem;
+  line-height: 1.4;
+  margin: 1rem 0;
 }
 
 pre code {
-  font-family: Consolas, Monaco, "Courier New", monospace;
-  font-size: 0.9rem;            
-  line-height: 1.5;
-  color: #333;                 
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  color: #333;
+}
+
+/* Pre/code blocks (dark mode) */
+body.dark-mode pre {
+  background: #1b1b1b;
+  color: #e6e6e6;
+  border: 1px solid #2b2b2b;
+}
+body.dark-mode pre code {
+  color: #e6e6e6;
+}
+
+/* API Summary tables */
+table.meta {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: .9rem;
+}
+
+table.meta th,
+table.meta td {
+  border: 1px solid #eee;
+  padding: .5rem .75rem;
+  text-align: left;
+}
+
+table.meta th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+/* API tables (dark mode) */
+body.dark-mode table.meta th,
+body.dark-mode table.meta td {
+  border-color: #2b2b2b;
+}
+body.dark-mode table.meta th {
+  background: #222;
 }
 
 /* ===== SCREENSHOT GALLERY ===== */
@@ -576,17 +632,17 @@ body.inventory-page .gallery img {
 }
 
 /* ===== PROJECT PAGE SPACING ===== */
-body.project-page section {
+body.project-page main section {
     padding: 30px 20px;
 }
 
-body.project-page h2 {
+body.project-page main h2 {
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
-body.project-page p,
-body.project-page ul {
+body.project-page main p,
+body.project-page main ul {
     margin-bottom: 1rem;
 }
 
@@ -696,14 +752,6 @@ body.dark-mode .profile-pic { border-color: #ff7a1a; }
 body.dark-mode.contact-page h2 { color: #f3f3f3; }
 body.dark-mode.contact-page p  { color: #d1d1d1; }
 body.dark-mode hr { border-color: #2b2b2b; }
-
-/* === Code Blocks === */
-body.dark-mode pre {
-  background: #1b1b1b;
-  color: #e6e6e6;
-  border: 1px solid #2b2b2b;
-}
-body.dark-mode pre code { color: #e6e6e6; }
 
 /* === Links & Focus States === */
 body.dark-mode a { color: #ff9a4d; }
