@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Inventory Management System (Django Web App) — Alex Leet</title>
+    <meta name="description" content="Case study of a Django web app that helps track products, stock levels, and orders in one simple dashboard." />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexleet.com/inventory-system.html" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Inventory Management System (Django Web App) — Case Study" />
+    <meta property="og:description" content="A Django-based web app for tracking products, suppliers, and stock levels — built with a clean, simple dashboard design." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexleet.com/inventory-system.html" />
+    <meta property="og:image" content="/images/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Inventory Management System (Django Web App) — Case Study" />
+    <meta name="twitter:description" content="A Django web app for managing inventory and tracking low-stock items through a simple dashboard." />
+    <meta name="twitter:image" content="https://alexleet.com/images/og-card.png" /> 
+</head>
+
+<body class="project-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header>
+        <div class="container header-inner">
+            <h1 class="brand">
+                <a href="index.html" class="logo-link"><span class="logo">AL</span> Alex Leet</a>
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="darkModeToggle" class="btn-ghost btn-sm" aria-label="Toggle dark mode" aria-pressed="false">🌙 Dark Mode</button>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Project Header -->
+        <section class="section">
+            <div class="container">
+                <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+
+                <h1>Inventory Management System (Django Web App)</h1>
+                <p class="meta"><strong>Stack:</strong> Django, MySQL, HTML, CSS, JavaScript</p>
+
+                <div class="actions" style="margin-top:.75rem;">
+                    <a class="btn-sm" href="https://github.com/AlexLeetDev/Inventory_Management_System" target="_blank">View Code</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                <p>
+                    This project is a simple web app that helps keep track of products, suppliers, and orders. I built it to learn Django while practicing how to connect a website to a database and design a clear, easy-to-use dashboard. It includes full CRUD features—add, edit, delete—and warns you when stock runs low.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Key Features -->
+        <section class="section">
+            <div class="container">
+                <h2>Key Features</h2>
+                <ul class="checklist">
+                    <li>📦 Manage products, suppliers, and orders with full CRUD support.</li>
+                    <li>⚠️ Automatic low-stock alerts when quantities drop below set levels.</li>
+                    <li>📊 Dashboard summary showing recent activity and stock insights.</li>
+                    <li>🔍 Search and filters to quickly locate specific items.</li>
+                    <li>🛠️ Simple, intuitive admin interface built with Django templates.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Design & UI Choices -->
+        <section class="section">
+            <div class="container">
+                <h2>Design & UI Choices</h2>
+                <p>
+                    I wanted the app to look clean and easy to use. The dashboard, tables, and reports all share the same simple layout so everything feels connected. Bright blue headers make each section stand out, and rounded corners with light shadows give the pages a softer look.
+                </p>
+
+                <p>
+                    The goal was to make information easy to find at a glance. Tables are neatly lined up with clear headings and small icons to help identify what each column shows. Buttons like "View" and "Add" are placed where users expect them, and highlighted rows help call attention to important or recently updated items.
+                </p>
+
+                <ul class="meta">
+                    <li>✅ Blue headers for clear visual separation.</li>
+                    <li>✅ Rounded corners and soft shadows for a friendly feel.</li>
+                    <li>✅ Consistent spacing and simple layout for readability.</li>
+                    <li>✅ Highlight colors make key data easy to spot.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Project Structure -->
+        <section class="section">
+            <div class="container">
+                <h2>Project Structure</h2>
+                <p>
+                    I kept the project organized by separating code, templates, and static files into different folders. This makes it easier to update parts of the app later and keeps everything neat and easy to find. Each file has a clear purpose—for example, <code>models.py</code> stores the data setup, while <code>views.py</code> controls what shows up on each page.
+                </p>
+
+                <pre><code>
+Inventory_Management_System/
+├── manage.py
+├── ims_app/
+│   ├── models.py        # Product, Supplier, Order data
+│   ├── views.py         # Handles page logic and data flow
+│   ├── urls.py          # App routes
+│   ├── templates/       # HTML templates for each view
+│   └── static/          # CSS and JavaScript files
+├── ims_project/
+│   ├── settings.py      # App and database settings
+│   ├── urls.py          # Main URL routes
+│   └── wsgi.py          # Server entry point
+└── db.sqlite3           # Local database
+                </code></pre>
+
+                <p class="meta">
+                    This layout follows common Django practices and keeps the project easy to maintain and expand with new features later on.
+                </p>
+            </div>
+        </section>
+
+        <!-- Screenshots -->
+        <section class="section">
+            <div class="container">
+                <h2>Screenshots</h2>
+                <ul class="gallery">
+                    <li>
+                        <a href="images/inventory-system/admin_login.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/admin_login.png" alt="Admin login page" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">🔐 Admin login page</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/dashboard_overview.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/dashboard_overview.png" alt="Dashboard overview" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">📊 Dashboard overview</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/highlight_key_items.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/highlight_key_items.png" alt="Highlighted key items" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">⭐ Highlighted key items</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/product_list.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/product_list.png" alt="Product list view" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">📦 Product list view</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/product_details.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/product_details.png" alt="Product details view" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">🧾 Product details view</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/low_stock_report.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/low_stock_report.png" alt="Low stock report" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">⚠️ Low stock report</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/activity_log.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/activity_log.png" alt="Activity log" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">🗂️ Activity log</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/admin_dashboard.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/admin_dashboard.png" alt="Admin dashboard" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">🧭 Admin dashboard</p>
+                    </li>
+
+                    <li>
+                        <a href="images/inventory-system/admin_order_list.png" target="_blank" rel="noopener">
+                            <img src="images/inventory-system/admin_order_list.png" alt="Admin order list" loading="lazy" decoding="async">
+                        </a>
+                        <p class="cap">🧺 Admin order list</p>
+                    </li>
+                </ul>
+            </div>
+        </section> 
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://github.com/alexleetdev" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/alexleet/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <a href="#top" class="back-link"><i class="fas fa-arrow-up"></i> Back to top</a>
+        <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

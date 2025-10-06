@@ -66,6 +66,18 @@ h1.brand { margin: 0; }
     line-height: 1;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link:hover .logo {
+  background: #ff7a1a;
+}
+
 /* Nav alignment */
 nav ul {
     list-style: none;
