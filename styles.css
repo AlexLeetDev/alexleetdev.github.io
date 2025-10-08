@@ -732,17 +732,6 @@ body.dark-mode .card h3 { color: #fafafa; }
 body.dark-mode .card p { color: #cfcfcf; }
 body.dark-mode .card .meta { color: #a6a6a6; }
 
-/* === Tech Stack Chips === */
-body.dark-mode .tech-stack {
-  border-top-color: #2b2b2b;
-}
-body.dark-mode .tech-stack li {
-  background: #1a1a1a;
-  border-color: #2b2b2b;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
-  color: #dcdcdc;
-}
-
 /* === Screenshot Gallery === */
 body.dark-mode .gallery li {
   background: #1a1a1a;
@@ -783,3 +772,237 @@ body.dark-mode .cta-work {
   border-top-color: #2b2b2b;
 }
 
+/* ===== KEY POINTS ===== */
+.key-points {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.key-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.6;
+}
+.key-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 1.2rem;
+  color: #ff6600;
+}
+
+/* Dark mode */
+body.dark-mode .key-points li::before {
+  color: #ff7a1a;
+}
+
+/* ===== FIGURE.MEDIA (image + caption card) ===== */
+figure.media {
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+figure.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+figure.media figcaption {
+  padding: .5rem .75rem;
+  font-size: .9rem;
+  color: #555;
+  background: #f7f7f7;
+  border-top: 1px solid #eee;
+  text-align: left;
+}
+
+/* Dark mode */
+body.dark-mode figure.media {
+  background: #1a1a1a;
+  border-color: #2b2b2b;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.40);
+}
+body.dark-mode figure.media figcaption {
+  background: #202020;
+  color: #cfcfcf;
+  border-top-color: #2b2b2b;
+}
+
+/* ===== DETAILS.COLLAPSIBLE (toggle box) ===== */
+details.collapsible {
+  margin: 1rem 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+details.collapsible summary {
+  cursor: pointer;
+  padding: .6rem .8rem;
+  font-weight: 600;
+  list-style: none;
+}
+details.collapsible[open] {
+  border-color: #ccc;
+}
+details.collapsible > *:not(summary) {
+  padding: 0 .8rem .8rem;
+}
+
+/* Dark mode */
+body.dark-mode details.collapsible {
+  background: #1a1a1a;
+  border-color: #2b2b2b;
+}
+body.dark-mode details.collapsible[open] {
+  border-color: #343434;
+}
+
+/* ===== CSV PREVIEW CONTAINER (tiny table scroller) ===== */
+.table-scroll {
+  margin-top: .5rem;
+  max-height: 260px;
+  overflow: auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fff;
+}
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.table-scroll th,
+.table-scroll td {
+  border: 1px solid #eee;
+  padding: .4rem .6rem;
+  text-align: left;
+}
+.table-scroll th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+/* Dark mode */
+body.dark-mode .table-scroll {
+  background: #1a1a1a;
+  border-color: #2b2b2b;
+}
+body.dark-mode .table-scroll th,
+body.dark-mode .table-scroll td {
+  border-color: #2b2b2b;
+}
+body.dark-mode .table-scroll th {
+  background: #222;
+  color: #e6e6e6;
+}
+
+/* === Tech Stack Chips (base) === */
+.tech-stack{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  list-style:none;
+  padding:0;
+  margin:.25rem 0 0;
+  border-top:0px;
+}
+.tech-stack li{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  padding:.28rem .60rem;
+  border:1px solid #e6e6e6;
+  border-radius:9999px;       /* pill shape */
+  background:#fff;
+  color:#333;
+  line-height:1;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  white-space:nowrap;
+  transition:
+    background-color .15s ease,
+    border-color .15s ease,
+    box-shadow .2s ease,
+    transform .15s ease;
+}
+.tech-stack i{
+  font-size:1rem;
+  line-height:1;
+  transform: translateY(.5px);
+}
+
+/* Hover */
+.tech-stack li:hover{
+  background:#fff8f3;
+  border-color:#ff6600;
+  box-shadow:0 3px 12px rgba(0,0,0,.14);
+  transform: translateY(-1px);
+}
+
+/* === Dark mode === */
+body.dark-mode .tech-stack{ border-top:0; }
+body.dark-mode .tech-stack li{
+  background:#1a1a1a;
+  border-color:#2b2b2b;
+  box-shadow:0 2px 6px rgba(0,0,0,0.35);
+  color:#dcdcdc;
+}
+body.dark-mode .tech-stack li:hover{ background:#1f1f1f; }
+
+/* Optional icon tints */
+.tech-stack .fa-python      { color:#3776AB; }
+.tech-stack .fa-brain       { color:#FF6F00; }
+.tech-stack .fa-camera      { color:#5C6BC0; }
+.tech-stack .fa-superscript { color:#013243; }
+.tech-stack .fa-chart-line  { color:#2E7D32; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .tech-stack li{ transition:none; transform:none !important; }
+}
+
+/* Smaller pills on mobile (optional) */
+@media (max-width:480px){
+  .tech-stack li{ padding:.24rem .52rem; font-size:.95rem; }
+  .tech-stack i{ font-size:.95rem; }
+}
+
+/* Make the summary obviously clickable */
+details.collapsible summary{
+  display:flex; align-items:center; gap:.6rem; justify-content:space-between;
+  cursor:pointer; font-weight:600; padding:.6rem .8rem; border-radius:10px;
+  transition: background-color .15s ease, border-color .15s ease, box-shadow .2s ease;
+}
+
+/* Hide default marker so we can use our own chevron */
+details.collapsible summary::-webkit-details-marker{ display:none; }
+
+/* Chevron on the right (rotates when open) */
+details.collapsible summary::after{
+  content:"▾"; opacity:.7; margin-left:.5rem; transition: transform .2s ease;
+}
+details.collapsible[open] summary::after{ transform: rotate(-180deg); }
+
+/* Title + icon */
+details.collapsible .summary-title{ display:inline-flex; align-items:center; gap:.45rem; }
+details.collapsible .summary-title i{ opacity:.85; }
+
+/* Small hint text (hide on very small screens) */
+details.collapsible .summary-hint{ font-weight:400; font-size:.9rem; opacity:.65; }
+@media (max-width: 520px){ details.collapsible .summary-hint{ display:none; } }
+
+/* Hover / focus */
+details.collapsible summary:hover{
+  background:#fff8f3; border-color:#ff6600; box-shadow:0 2px 10px rgba(0,0,0,.12);
+}
+details.collapsible summary:focus-visible{
+  outline:2px solid rgba(255,102,0,.35); outline-offset:2px;
+}
+
+/* Dark mode */
+body.dark-mode details.collapsible summary:hover{
+  background:#242017; border-color:#ff7a1a; box-shadow:0 6px 18px rgba(0,0,0,.45);
+}

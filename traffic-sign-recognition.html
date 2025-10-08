@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Traffic Sign Recognition (Python Project) — Alex Leet</title>
+    <meta name="description" content="Case study of a Python project that recognizes different traffic signs using image data and a trained model." />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://alexleet.com/traffic-sign-recognition.html" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Traffic Sign Recognition (Python Project) — Case Study" />
+    <meta property="og:description" content="A Python project that recognizes traffic signs from images and shows model results with simple visuals." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alexleet.com/traffic-sign-recognition.html" />
+    <meta property="og:image" content="/images/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Traffic Sign Recognition (Python Project) — Case Study" />
+    <meta name="twitter:description" content="A Python project that recognizes traffic signs from images and shows model results with simple visuals." />
+    <meta name="twitter:image" content="https://alexleet.com/images/og-card.png" />
+</head>
+
+<body class="project-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <h1 class="brand">
+                <a href="index.html" class="logo-link"><span class="logo">AL</span> Alex Leet</a>
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <button id="darkModeToggle" class="btn-ghost btn-sm" aria-label="Toggle dark mode" aria-pressed="false">🌙 Dark Mode</button>
+        </div>
+    </header>
+    
+    <main id="main">
+        <!-- Project Header -->
+        <section class="section">
+            <div class="container">
+                <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+
+                <h1>Traffic Sign Recognition (Python Project)</h1>
+
+                <p class="meta"><strong>Built with:</strong></p>
+                <ul class="tech-stack" aria-label="Tech stack">
+                    <li><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></li>
+                    <li><i class="fas fa-brain" aria-hidden="true"></i><span>TensorFlow</span></li>
+                    <li><i class="fas fa-camera" aria-hidden="true"></i><span>OpenCV</span></li>
+                    <li><i class="fas fa-superscript" aria-hidden="true"></i><span>NumPy</span></li>
+                    <li><i class="fas fa-chart-line" aria-hidden="true"></i><span>Matplotlib</span></li>
+                </ul>
+
+                <div class="actions" style="margin-top:.75rem;">
+                    <a class="btn-sm" href="https://github.com/AlexLeetDev/traffic-sign-recognition" target="_blank">View Code</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Overview -->
+        <section class="section">
+            <div class="container">
+                <h2>Overview</h2>
+                <p>
+                    This project uses a lightweight neural network to recognize German traffic signs from low-res images. It follows a straightforward machine learning (ML) workflow: prepare, train, evaluate, and improve. 
+                </p>
+                <ul class="key-points">
+                    <li>43 sign types, with extra variations added so less common signs weren't overlooked.</li>
+                    <li>Repeatable training steps with results saved to <code>outputs/</code>.</li>
+                    <li>Confusion matrix, per-class accuracy, and misclassified examples included.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Dataset -->
+        <section class="section">
+            <div class="container">
+                <h2>Dataset</h2>
+                <p>
+                    I used the German Traffic Sign Recognition Benchmark (GTSRB), a public set of photos covering 43 kinds of signs in real driving conditions. Some images are a bit blurry or partly cut off, which makes the task feel closer to real life.
+                </p>
+                <p>
+                    Images were scaled down to 32x32 to keep the training light and fast. I also made small adjustments (tiny rotations and brightness changes) to help the model handle different lighting and angles without changing what the signs look like.
+                </p>
+
+                <ul class="key-points">
+                    <li>Thousands of labeled photos across 43 sign types.</li>
+                    <li>Resized to 32x32; gentle edits for lighting/angle changes.</li>
+                    <li>Split into training, validation, and test sets for a fair check on new images.</li>
+                </ul>
+
+                <p class="meta">
+                    Source:
+                    <a href="https://benchmark.ini.rub.de/gtsrb_dataset.html" target="_blank" rel="noopener">GTSRB (official)</a>.
+                    Mirror:
+                    <a href="https://www.kaggle.com/datasets/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign" target="_blank" rel="noopener">Kaggle</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Model -->
+        <section class="section">
+            <div class="container">
+                <h2>Model Architecture</h2>
+                <p>
+                    A compact CNN optimized for 32x32 inputs:
+                </p>
+                
+                <ul class="key-points">
+                    <li><strong>Pattern-finding layers:</strong> spot edges and shapes, then combine them into sign features; dropout step helps it learn patterns instead of memorizing photos.</li>
+                    <li><strong>Summary → decision:</strong> the network condenses each image to a short summary and then picks the best match from 43 labels.</li>
+                    <li><strong>Right-sized and stable:</strong> small enough to train quickly on 32×32 images; uses early stop/learning-rate slowdown and class weighting so rarer signs aren't overlooked.</li>
+                </ul>
+
+                <p class="muted"><strong>Why this design?</strong> Simple, fast, and accurate for tiny images.</p>
+            </div>
+        </section>
+        
+        <!-- Training Setup -->
+        <section class="section">
+            <div class="container">
+                <h2>Training Setup</h2>
+                <p>
+                    Short training runs, simple checks, and a few safeguards to keep learning steady.
+                </p>
+
+                <ul class="key-points">
+                    <li><strong>Rounds:</strong> about 20–30 training rounds ("epochs"), stop early if it stops improving.</li>
+                    <li><strong>Batch size:</strong> 64 images at a time.</li>
+                    <li><strong>Progress check:</strong> keep a small set of images the model never sees during training to track real progress.</li>
+                    <li><strong>Learning step:</strong> slow the learning if progress stalls to fine-tune near the end.</li>
+                    <li><strong>Rare signs:</strong> give them a bit more weight so they aren’t ignored.</li>
+                    <li><strong>Image tweaks:</strong> small rotations and brightness changes during training to handle different conditions.</li>
+                    <li><strong>Saved results:</strong> charts/logs go to <code>outputs/</code> in the code repo.
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Results -->
+        <section class="section">
+            <div class="container">
+                <h2>Results</h2>
+                
+                <ul class="key-points">
+                    <li><strong>Average (per class):</strong> 92.9% across 43 signs.</li>
+                    <li><strong>Strongest (≈100%):</strong> End of no passing by trucks; Dangerous curve (left); End of all limits; Stop; Yield.</li>
+                    <li><strong>Lower:</strong> Pedestrians (50%); End of no passing (60%); Speed limit 20 (80%).</li>
+                </ul>
+
+                <figure class="media">
+                    <img
+                        src="images/traffic-sign-recognition/confusion_matrix_highres.png"
+                        alt="Confusion matrix showing correct and incorrect predictions across 43 sign types"
+                        loading="lazy"
+                        decoding="async">
+                    <figcaption>Confusion matrix — darker squares mean more correct guesses for that sign.</figcaption>
+                </figure>
+
+                <details class="collapsible">
+                    <summary>
+                        <span class="summary-title">
+                            <i class="fas fa-table" aria-hidden="true"></i>
+                            See the detailed accuracy report
+                        </span>
+                        <span class="summary-hint">Click to expand</span>
+                    </summary>
+
+                    <p>You can download the full per-class accuracy here:</p>
+                    <p><a href="data/traffic-sign-recognition/per_class_accuracy.csv" download>Download per-class accuracy (CSV)</a></p>
+                    <div id="accPreview" class="table-scroll compact" aria-live="polite"
+                        data-csv="data/traffic-sign-recognition/per_class_accuracy.csv">(Loading preview…)</div>
+                </details>
+
+                <ul class="gallery">
+                    <li>
+                        <a href="images/traffic-sign-recognition/prediction_samples_grid.png" target="_blank" rel="noopener">
+                            <img
+                                src="images/traffic-sign-recognition/prediction_samples_grid.png"
+                                alt="Sample predictions on traffic sign images"
+                                loading="lazy"
+                                decoding="async">
+                        </a>
+                        <p class="cap">🧩 Sample predictions</p>
+                    </li>
+                    <li>
+                        <a href="images/traffic-sign-recognition/misclassified_samples.png" target="_blank" rel="noopener">
+                            <img
+                                src="images/traffic-sign-recognition/misclassified_samples.png"
+                                alt="Examples of traffic signs the model misclassified"
+                                loading="lazy"
+                                decoding="async">
+                        </a>
+                        <p class="cap">⚠️ Misclassified examples</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="https://github.com/alexleetdev" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/alexleet/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <a href="#top" class="back-link"><i class="fas fa-arrow-up"></i> Back to top</a>
+        <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

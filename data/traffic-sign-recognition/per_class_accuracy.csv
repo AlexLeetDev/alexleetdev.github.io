@@ -1,0 +1,44 @@
+ClassId,SignName,Accuracy
+0,Speed limit (20km/h),0.8
+1,Speed limit (30km/h),0.9847222222222223
+2,Speed limit (50km/h),0.964
+3,Speed limit (60km/h),0.9266666666666666
+4,Speed limit (70km/h),0.9621212121212122
+5,Speed limit (80km/h),0.9380952380952381
+6,End of speed limit (80km/h),0.8333333333333334
+7,Speed limit (100km/h),0.9644444444444444
+8,Speed limit (120km/h),0.9333333333333333
+9,No passing,0.9875
+10,No passing for vehicles over 3.5 metric tons,0.9787878787878788
+11,Right-of-way at the next intersection,0.9833333333333333
+12,Priority road,0.991304347826087
+13,Yield,0.9958333333333333
+14,Stop,1.0
+15,No vehicles,0.9857142857142858
+16,Vehicles over 3.5 metric tons prohibited,0.9866666666666667
+17,No entry,0.975
+18,General caution,0.8461538461538461
+19,Dangerous curve to the left,1.0
+20,Dangerous curve to the right,0.9888888888888889
+21,Double curve,0.8444444444444444
+22,Bumpy road,0.9666666666666667
+23,Slippery road,0.96
+24,Road narrows on the right,0.8333333333333334
+25,Road work,0.925
+26,Traffic signals,0.8944444444444445
+27,Pedestrians,0.5
+28,Children crossing,0.96
+29,Bicycles crossing,0.9666666666666667
+30,Beware of ice/snow,0.8333333333333334
+31,Wild animals crossing,0.9777777777777777
+32,End of all speed and passing limits,1.0
+33,Turn right ahead,0.9904761904761905
+34,Turn left ahead,0.9166666666666666
+35,Ahead only,0.9717948717948718
+36,Go straight or right,0.9416666666666667
+37,Go straight or left,0.9833333333333333
+38,Keep right,0.9927536231884058
+39,Keep left,0.8666666666666667
+40,Roundabout mandatory,0.9777777777777777
+41,End of no passing,0.6
+42,End of no passing by vehicles over 3.5 metric tons,1.0
