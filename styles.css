@@ -455,6 +455,11 @@ body.dark-mode .contact-links a:focus-visible {
   text-align: left;
   box-shadow: 0 3px 8px rgba(0,0,0,0.05);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .card:hover {
