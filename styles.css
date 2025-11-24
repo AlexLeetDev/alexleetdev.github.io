@@ -108,6 +108,12 @@ nav ul li a {
     text-decoration-thickness: 2px;
 }
 
+nav ul li a:visited,
+.logo-link:visited {
+    color: white;
+    text-decoration: none;
+}
+
 nav ul li a:hover {
     color: #ff6600;
     text-decoration: underline;
@@ -1010,4 +1016,9 @@ details.collapsible summary:focus-visible{
 /* Dark mode */
 body.dark-mode details.collapsible summary:hover{
   background:#242017; border-color:#ff7a1a; box-shadow:0 6px 18px rgba(0,0,0,.45);
+}
+
+/* ===== SPACING UTILITIES ===== */
+.mb-32 {
+  margin-bottom: 2rem !important;
 }

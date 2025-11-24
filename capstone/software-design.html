@@ -10,9 +10,18 @@
 </head>
 
 <body class="project-page">
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a> 
+
   <header>
     <div class="container header-inner">
-      <h1 class="brand"><a href="../index.html"><span class="logo">AL</span> Alex Leet</a></h1>
+      <h1 class="brand">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">AL</span> Alex Leet
+        </a>
+      </h1>
+
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -26,13 +35,169 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Capstone Overview</a>
-      <h1>Software Design & Engineering</h1>
-      <p>This page will showcase the Inventory Management System artifact for my CS-499 Capstone.</p>
-      <p>Details and enhancements coming soon.</p>
-    </div>
+  <!-- Main Content -->
+  <main id="main" class="container">
+
+    <!-- Intro -->
+    <section>
+      <h1><i class="fa-solid fa-code-branch"></i> Software Design Enhancement: RBAC</h1>
+      <p class="breadcrumb">
+        <a href="index.html">CS-499 Capstone</a> / Software Design Enhancement
+      </p>
+      <p>
+        For this enhancement, I added Role-Based Access Control (RBAC) to my Django Inventory Management System. This update introduces user roles with different access levels, improving both security and overall project structure.
+      </p>
+    </section>
+
+    <!-- Overview -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-circle-info"></i> Overview</h2>
+        <p>
+          RBAC ensures that the system checks a user's role before allowing certain actions. This creates a more realistic and maintainable design, similar to what many organizations use in real applications.
+        </p>
+
+        <h3><i class="fa-solid fa-users"></i> User Roles</h3>
+        <ul class="key-points">
+          <li><strong>Admin</strong> — Full access to all features and settings.</li>
+          <li><strong>Manager</strong> — Can manage inventory and view system activity.</li>
+          <li><strong>Staff</strong> — Can view product information but cannot make changes.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-check"></i> Benefits of RBAC</h3>
+        <ul class="key-points">
+          <li>Protects important actions such as updating stock or marking featured products.</li>
+          <li>Creates a clear structure for future additions or access levels.</li>
+          <li>Aligns the system with common software engineering practices.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Technical Work -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-wrench"></i> Technical Enhancements</h2>
+
+        <h3>Key Updates Implemented</h3>
+        <ul class="key-points">
+          <li>Added custom permissions tied to inventory and product management.</li>
+          <li>Created Admin, Manager, and Staff roles using Django Groups.</li>
+          <li>Applied permission checks in key views to protect sensitive actions.</li>
+          <li>Updated the navigation to show certain links only to authorized roles.</li>
+          <li>Restricted the “featured product” toggle to Manager and Admin roles.</li>
+          <li>Built a new management command (<code>setup_rbac</code>) to create roles automatically.</li>
+        </ul>
+
+        <h3>Files Updated for RBAC</h3>
+        <ul class="key-points">
+          <li><code>inventory/models.py</code> — Added custom permissions.</li>
+          <li><code>inventory/views.py</code> — Applied login and permission decorators.</li>
+          <li><code>templates/base.html</code> — Role-aware navigation.</li>
+          <li><code>templates/inventory/product_list.html</code> — Restricted featured toggle.</li>
+          <li><code>inventory/management/commands/setup_rbac.py</code> — New command to set up roles.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Outcome & Reflection -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-diagram-project"></i> Outcome & Reflection</h2>
+        <p>
+          This enhancement strengthened the system's design by introducing clear, maintainable rules for what each user can access. It supported the Software Engineering/Design outcome by improving structure, security, and clarity without altering the original purpose of the project.
+        </p>
+
+        <p>
+          I learned how to apply Django's permission framework in a practical way and determine which parts of the code needed changes. Being intentional about modifying only the necessary files helped keep the enhancement clean and easy to document.
+        </p>
+      </article>
+    </section>
+    
+    <!-- GitHub & Tech -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-brands fa-github"></i> GitHub & Tools</h2>
+        <p>View the enhancement branch on GitHub:</p>
+
+        <p class="mb-32">
+          <a class="btn" href="https://github.com/AlexLeetDev/Inventory_Management_System/tree/enhancement/rbac"
+              target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </p>
+
+        <h3 class="mt-20"><i class="fa-solid fa-gears"></i> Technologies</h3>
+        <ul class="tech-stack">
+          <li><i class="fa-brands fa-python"></i> Python</li>
+          <li><i class="fa-solid fa-feather"></i> Django</li>
+          <li><i class="fa-solid fa-database"></i> MySQL</li>
+          <li><i class="fa-solid fa-shield-halved"></i> RBAC</li>
+          <li><i class="fa-solid fa-code"></i> HTML/CSS</li>
+        </ul>
+      </article>
+    </section>
+    
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-images"></i> Screenshots</h2>
+        <p>
+          The following screenshots highlight the RBAC enhancement and improved UI components added to the Inventory Management System.
+        </p>
+
+        <ul class="gallery">
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/01-ims-login-page.png"
+                   alt="Login page with custom branding and role-based access entry." />
+              <figcaption class="cap">Login Page</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/02-ims-dashboard-overview.png"
+                   alt="Dashboard showing total stock, low-stock items, and recent activities." />
+              <figcaption class="cap">Inventory Dashboard</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/03-ims-product-list.png"
+                   alt="Product list displaying stock levels and actions." />
+              <figcaption class="cap">Product List</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/04-ims-product-detail.png"
+                   alt="Detailed product view showing stock alert and activity log." />
+              <figcaption class="cap">Product Detail View</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/05-ims-low-stock-report.png"
+                   alt="Low stock report listing products below threshold." />
+              <figcaption class="cap">Low Stock Report</figcaption>
+            </figure>
+          </li>
+
+          <li>
+            <figure class="media">
+              <img src="../images/ims/06-ims-user-menu.png"
+                   alt="User profile dropdown showing role-based navigation." />
+              <figcaption class="cap">User Menu (RBAC)</figcaption>
+            </figure>
+          </li>
+
+        </ul>
+      </article>
+    </section>
+
   </main>
 
   <footer>
@@ -43,6 +208,16 @@
       <a href="../contact.html">Contact</a>
       <a href="index.html">CS-499 Capstone</a>
     </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/AlexLeetDev"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/alexleet"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <a href="#top" class="back-link">
+      <i class="fas fa-arrow-up"></i> Back to top
+    </a>
+
     <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
   </footer>
 
