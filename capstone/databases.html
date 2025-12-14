@@ -12,7 +12,11 @@
 <body class="project-page">
   <header>
     <div class="container header-inner">
-      <h1 class="brand"><a href="../index.html"><span class="logo">AL</span> Alex Leet</a></h1>
+      <h1 class="brand">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">AL</span> Alex Leet
+        </a>
+      </h1>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -26,13 +30,310 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Capstone Overview</a>
-      <h1>Databases</h1>
-      <p>This page will showcase the Travlr App artifact for my CS-499 Capstone.</p>
-      <p>Details and enhancements coming soon.</p>
-    </div>
+  <!-- Main Content -->
+  <main id="main" class="container">
+
+    <!-- Intro -->
+    <section>
+      <h1><i class="fa-solid fa-database"></i> Databases Enhancement: Travlr</h1>
+
+      <p class="breadcrumb">
+        <i class="fas fa-folder-tree"></i>
+        <a href="index.html">CS-499 Capstone</a>
+        <span class="sep">/</span>
+        Databases
+      </p>
+
+      <p>
+        This enhancement focuses on improving the database design of my Travlr full-stack web application, which was originally developed for the CS-465 Full Stack Development I course. The goal of this update was to make the project fully database-driven and easier to maintain.
+      </p>
+    </section>
+    
+    <!-- Overview -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-circle-info"></i> Overview</h2>
+
+        <p>
+          Travlr is a full-stack web application that simulates a travel booking website. It includes a public-facing site where users can browse trips, rooms, meals, and travel-related news, along with an admin interface used to manage this content.
+        </p>
+
+        <p>
+          In the initial version of the application, the database was primarily used for the `Trips` feature. Other sections, such as `Meals`, `Rooms`, and `News`, pulled their information from local JSON files instead of the database.
+        </p>
+
+        <p>
+          This enhancement converted the entire application to use MongoDB. All major content is now stored in the database and accessed through the API, creating a more consistent and realistic full-stack design.
+        </p>
+      </article>
+    </section>
+    
+    <!-- Enhancement Overview -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-check"></i> Enhancement Overview</h2>
+
+        <ul class="key-points">
+          <li>Moved all major application content into MongoDB.</li>
+          <li>Removed reliance on local JSON files.</li>
+          <li>Created a single, centralized data source.</li>
+          <li>Improved maintainability and scalability.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Technical Updates -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-wrench"></i> Technical Updates</h2>
+
+        <ul class="key-points">
+          <li>Created MongoDB collections for meals, rooms, and news.</li>
+          <li>Defined Mongoose models for each content type.</li>
+          <li>Added API controllers to retrieve database records.</li>
+          <li>Updated server-side controllers to replace JSON file usage.</li>
+          <li>Expanded the seed script to populate all collections.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-file-code"></i> Files Updated</h3>
+        <ul class="key-points">
+          <li><code>app_api/models/</code> — Added Meals, Rooms, and News models.</li>
+          <li><code>app_api/controllers/</code> — New database-driven controllers.</li>
+          <li><code>app_server/controllers/</code> — Updated to use MongoDB data.</li>
+          <li><code>seed.js</code> — Expanded to support all collections.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Outcome & Reflection -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-diagram-project"></i> Outcome & Reflection</h2>
+
+        <p>
+          This enhancement supports the Computer Science program outcome related to database design and implementation. By using MongoDB across the entire application, the project now reflects real-world full-stack development practices.
+        </p>
+
+        <p>
+          Completing this enhancement improved my understanding of how data is managed across a full-stack application. It highlighted the importance of having a single, reliable data source and reinforced how changes to one part of a system can affect other areas.
+        </p>
+
+        <h3><i class="fa-solid fa-triangle-exclamation"></i> Challenges</h3>
+
+        <ul class="key-points">
+          <li>
+            Updating existing pages so they could load information from the database instead of local files, while making sure nothing broke during the transition.
+          </li>
+          <li>
+            Making sure information was displayed correctly on each page after switching to database-based data, since some sections expected the data in a specific format.
+          </li>
+          <li>
+            Preparing sample data that worked properly with the new database setup so the application could be tested and demonstrated without errors.
+          </li>
+        </ul>
+
+        <p>
+          Overall, this enhancement improved the structure and quality of the Travlr application. It strengthened my backend development skills and resulted in a stronger artifact for my ePortfolio.
+        </p>
+      </article> 
+    </section>
+
+    <!-- GitHub & Technologies -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-brands fa-github"></i> GitHub & Tools</h2>
+
+        <p>View the database enhancement work on GitHub:</p>
+
+        <p class="mb-32">
+          <a class="btn"
+             href="https://github.com/AlexLeetDev/cs465-fullstack/tree/enhancement/travlr-databases"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </p>
+
+        <h3><i class="fa-solid fa-gears"></i> Technologies</h3>
+        <ul class="tech-stack">
+          <li><i class="fa-solid fa-database"></i> MongoDB</li>
+          <li><i class="fa-solid fa-leaf"></i> Mongoose</li>
+          <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+          <li><i class="fa-solid fa-network-wired"></i> Express</li>
+          <li><i class="fa-brands fa-angular"></i> Angular</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Screenshots -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-images"></i> Screenshots</h2>
+
+        <p>
+          The following screenshots highlight how data is stored, accessed, and displayed throughout the Travlr application after the database enhancement.
+        </p>
+
+        <!-- Database -->
+        <h3><i class="fa-solid fa-database"></i> Database Collections</h3>
+        <ul class="gallery">
+
+          <li>
+            <a href="../images/fullstack-app/Database/travlr-db-collections.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Database/travlr-db-collections.png"
+                   alt="Overview of MongoDB collections used by the Travlr application."
+                   loading="lazy">
+            </a>
+            <p class="cap">All Collections</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Database/travlr-db-meals-collection.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Database/travlr-db-meals-collection.png"
+                   alt="Meals collection showing database records."
+                   loading="lazy">
+            </a>
+            <p class="cap">Meals Collection</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Database/travlr-db-rooms-collection.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Database/travlr-db-rooms-collection.png"
+                   alt="Rooms collection showing database records."
+                   loading="lazy">
+            </a>
+            <p class="cap">Rooms Collection</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Database/travlr-db-news-collection.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Database/travlr-db-news-collection.png"
+                   alt="News collection showing database records."
+                   loading="lazy">
+            </a>
+            <p class="cap">News Collection</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Database/travlr-db-trips-collection.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Database/travlr-db-trips-collection.png"
+                   alt="Trips collection showing database records."
+                   loading="lazy">
+            </a>
+            <p class="cap">Trips Collection</p>
+          </li>
+
+        </ul>
+
+        <!-- API Endpoints -->
+        <h3><i class="fa-solid fa-plug"></i> API Endpoints</h3>
+        <ul class="gallery">
+
+          <li>
+            <a href="../images/fullstack-app/API Endpoints/travlr-api-trips.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/API Endpoints/travlr-api-trips.png"
+                   alt="Trips API endpoint returning JSON data."
+                   loading="lazy">
+            </a>
+            <p class="cap">Trips API</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/API Endpoints/travlr-api-meals.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/API Endpoints/travlr-api-meals.png"
+                   alt="Meals API endpoint returning JSON data."
+                   loading="lazy">
+            </a>
+            <p class="cap">Meals API</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/API Endpoints/travlr-api-rooms.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/API Endpoints/travlr-api-rooms.png"
+                   alt="Rooms API endpoint returning JSON data."
+                   loading="lazy">
+            </a>
+            <p class="cap">Rooms API</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/API Endpoints/travlr-api-news.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/API Endpoints/travlr-api-news.png"
+                   alt="News API endpoint returning JSON data."
+                   loading="lazy">
+            </a>
+            <p class="cap">News API</p>
+          </li>
+
+        </ul>
+
+        <!-- Public Website Pages -->
+        <h3><i class="fa-solid fa-globe"></i> Public Website Pages</h3>
+        <ul class="gallery">
+
+          <li>
+            <a href="../images/fullstack-app/Public Website Pages/travlr-home-page.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Public Website Pages/travlr-home-page.png"
+                   alt="Travlr home page displaying database-driven content."
+                   loading="lazy">
+            </a>
+            <p class="cap">Home Page</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Public Website Pages/travlr-travel-page.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Public Website Pages/travlr-travel-page.png"
+                   alt="Trips page displaying database-driven travel listings."
+                   loading="lazy">
+            </a>
+            <p class="cap">Trips Page</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Public Website Pages/travlr-meals-page.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Public Website Pages/travlr-meals-page.png"
+                   alt="Meals page displaying content loaded from the database."
+                   loading="lazy">
+            </a>
+            <p class="cap">Meals Page</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Public Website Pages/travlr-rooms-page.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Public Website Pages/travlr-rooms-page.png"
+                   alt="Rooms page displaying database-driven room listings."
+                   loading="lazy">
+            </a>
+            <p class="cap">Rooms Page</p>
+          </li>
+
+          <li>
+            <a href="../images/fullstack-app/Public Website Pages/travlr-news-page.png"
+               target="_blank" rel="noopener">
+              <img src="../images/fullstack-app/Public Website Pages/travlr-news-page.png"
+                   alt="News page displaying articles loaded from the database."
+                   loading="lazy">
+            </a>
+            <p class="cap">News Page</p>
+          </li>
+
+        </ul> 
+
+      </article>
+    </section>  
+
   </main>
 
   <footer>
@@ -43,6 +344,16 @@
       <a href="../contact.html">Contact</a>
       <a href="index.html">CS-499 Capstone</a>
     </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/AlexLeetDev"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/alexleet"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <a href="#top" class="back-link">
+      <i class="fas fa-arrow-up"></i> Back to top
+    </a>
+
     <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
   </footer>
 

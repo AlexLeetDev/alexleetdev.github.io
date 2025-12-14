@@ -449,7 +449,8 @@ body.dark-mode .contact-links a:focus-visible {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  margin-top: 1rem;             
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;            
 }
 
 /* Card container */
@@ -655,18 +656,30 @@ body.inventory-page .gallery img {
 }
 
 /* ===== PROJECT PAGE SPACING ===== */
+
+/* Spacing between sections on project pages */
 body.project-page main section {
-    padding: 30px 20px;
+    padding: 24px 20px;
 }
 
+/* Headings */
 body.project-page main h2 {
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
+/* Paragraphs and lists */
 body.project-page main p,
 body.project-page main ul {
     margin-bottom: 1rem;
+}
+
+body.project-page main section:first-of-type {
+    padding-bottom: 12px;
+}
+
+.section-code-review {
+  margin-top: 2.5rem;
 }
 
 /* ===== DARK MODE (body.dark-mode) ===== */
@@ -1075,12 +1088,4 @@ body.dark-mode details.collapsible summary:hover{
 
 .video-card:hover .play-button-overlay {
     transform: translate(-50%, -50%) scale(1.12);
-}
-
-body.project-page main section {
-    padding: 40px 20px;
-}
-
-body.project-page main section:first-of-type {
-    padding-bottom: 10px;
 }

@@ -10,9 +10,18 @@
 </head>
 
 <body class="project-page">
+
+  <!-- Skip link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+  
+  <!-- Header -->
   <header>
     <div class="container header-inner">
-      <h1 class="brand"><a href="../index.html"><span class="logo">AL</span> Alex Leet</a></h1>
+      <h1 class="brand">
+        <a href="../index.html" class="logo-link">
+          <span class="logo">AL</span> Alex Leet
+        </a>
+      </h1>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -26,15 +35,178 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Capstone Overview</a>
-      <h1>Algorithms & Data Structures</h1>
-      <p>This page will showcase the Farkle Dice Game artifact for my CS-499 Capstone.</p>
-      <p>Details and enhancements coming soon.</p>
-    </div>
-  </main>
+  <!-- Main Content -->
+  <main id="main" class="container">
 
+    <!-- Intro -->
+    <section>
+      <h1><i class="fa-solid fa-dice"></i> Algorithms & Data Structures Enhancement</h1>
+
+      <p class="breadcrumb">
+        <i class="fas fa-folder-tree"></i>
+        <a href="index.html">CS-499 Capstone</a>
+        <span class="sep">/</span>
+        Algorithms & Data Structures Enhancement
+      </p>
+
+      <p>
+        For this enhancement, I improved my original Farkle Dice Game project from IT-312. The first version had simple scoring rules and basic turn flow. For this capstone update, I redesigned the scoring system, strengthened the game logic, and added clearer rules and input checks. These updates make the game more reliable and easier for players to understand.
+      </p>
+    </section>
+    
+    <!-- Overview -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-circle-info"></i> Overview</h2>
+
+        <p>
+          The goal of the enhancement was to improve how the program handles scoring, dice sets, and turn decisions. I added a "hybrid" scoring system that supports more real Farkle rules, such as straights, three pairs, and larger sets. I also improved how the game checks player input so the game doesn't break when someone enters something unexpected.
+        </p>
+
+        <h3><i class="fa-solid fa-gears"></i> Improvements in Version 2.0</h3>
+        <ul class="key-points">
+          <li>Stronger scoring system that supports more combinations.</li>
+          <li>Turn logic that handles "hot dice," entering the game, and losing points correctly.</li>
+          <li>Better input checking so the game can handle mistakes safely.</li>
+          <li>Cleaner code structure that separates scoring, turn flow, and setup.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Technical Work -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-wrench"></i> Technical Enhancements</h2>
+
+        <p>
+          The upgraded version of the game uses clearer score calculations and stricter rules. I rewrote parts of the scoring logic so the game recognizes more dice patterns and reports points correctly. I also improved how the game decides when a player "enters" the game and made it automatic once they reach the entry score.
+        </p>
+
+        <h3><i class="fa-solid fa-code"></i> What Changed</h3>
+        <ul class="key-points">
+          <li>Added scoring for straights, three pairs, and extended sets.</li>
+          <li>Improved turn flow so scoring resets correctly after a Farkle.</li>
+          <li>Validated that the dice players choose to keep are actually allowed.</li>
+          <li>Separated scoring logic into reusable functions.</li>
+          <li>Made entering the game automatic once 500 points are reached.</li>
+        </ul>
+
+        <h3><i class="fa-solid fa-file-code"></i> Files Updated</h3>
+        <ul class="key-points">
+          <li><code>Game.cpp</code> — Improved scoring, turn flow, and validation.</li>
+          <li><code>Player.cpp</code> — Tracks whether a player has entered the game.</li>
+          <li><code>main.cpp</code> — Added start screen and rule viewing option.</li>
+          <li><code>farkle_rules.txt</code> — Updated rules for Version 2.0.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Reflection -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-pen-to-square"></i> Reflection</h2>
+
+        <p>
+          This enhancement strengthened the algorithms behind a simple game and showed how much logic goes into even small systems. Updating the scoring and turn flow forced me to think about edge cases, different rule paths, and how to keep everything organized.
+        </p>
+
+        <h3>What I Learned</h3>
+        <ul class="key-points">
+          <li>How to break large problems into smaller functions.</li>
+          <li>How scoring rules can be handled using arrays, counters, and pattern checks.</li>
+          <li>The value of clear input validation to prevent user mistakes.</li>
+          <li>How to structure independent components (Game, Player, Dice) in C++.</li>
+        </ul>
+
+        <h3>Challenges</h3>
+        <ul class="key-points">
+          <li>Making sure scoring worked correctly for every combination, including rare ones.</li>
+          <li>Handling hot dice and turn resets without breaking other parts of the logic.</li>
+          <li>Preventing invalid user input while keeping the game easy to play.</li>
+          <li>Ensuring the updated rules matched the new scoring system in Version 2.0.</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- GitHub & Tools -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-brands fa-github"></i> GitHub & Tools</h2>
+
+        <p>View the enhancement branch on GitHub:</p>
+        <p class="mb-32">
+          <a class="btn" 
+             href="https://github.com/AlexLeetDev/FarkleGame/tree/enhancement/hybrid-scoring-system"
+             target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </p>
+
+        <h3><i class="fa-solid fa-gears"></i> Technologies</h3>
+        <ul class="tech-stack">
+          <li><i class="fa-solid fa-dice"></i> C++</li>
+          <li><i class="fa-solid fa-gears"></i> Object-Oriented Design</li>
+          <li><i class="fa-solid fa-list-ol"></i> Algorithms</li>
+          <li><i class="fa-solid fa-database"></i> Data Structures</li>
+        </ul>
+      </article>
+    </section>
+    
+    <!-- Screenshots -->
+    <section>
+      <article class="card">
+        <h2><i class="fa-solid fa-images"></i> Screenshots</h2>
+        <p>These screenshots show the updated start screen, rules screen, player setup, and part of a gameplay sequence.</p>
+
+        <ul class="gallery">
+
+          <li>
+            <a href="../images/farkle/01-farkle-start-screen.png"
+               target="_blank" rel="noopener">
+              <img src="../images/farkle/01-farkle-start-screen.png"
+                   alt="Farkle start screen with version display."
+                   loading="lazy">
+            </a>
+            <p class="cap">Start Screen</p>
+          </li>
+
+          <li>
+            <a href="../images/farkle/02-farkle-rules-preview.png"
+               target="_blank" rel="noopener">
+              <img src="../images/farkle/02-farkle-rules-preview.png"
+                   alt="Rules preview showing updated Version 2.0 rules."
+                   loading="lazy">
+            </a>
+            <p class="cap">Rules Preview</p>
+          </li>
+
+          <li>
+            <a href="../images/farkle/03-farkle-player-setup.png"
+               target="_blank" rel="noopener">
+              <img src="../images/farkle/03-farkle-player-setup.png"
+                   alt="Player setup screen showing name entry."
+                   loading="lazy">
+            </a>
+            <p class="cap">Player Setup</p>
+          </li>
+
+          <li>
+            <a href="../images/farkle/04-farkle-gameplay-sequence.png"
+               target="_blank" rel="noopener">
+              <img src="../images/farkle/04-farkle-gameplay-sequence.png"
+                   alt="Gameplay sequence showing rolling, scoring, and turn flow."
+                   loading="lazy">
+            </a>
+            <p class="cap">Gameplay Sequence</p>
+          </li>
+
+        </ul>
+        
+      </article>
+    </section> 
+
+  </main>
+  
   <footer>
     <div class="footer-links">
       <a href="../index.html">Home</a>
@@ -43,6 +215,16 @@
       <a href="../contact.html">Contact</a>
       <a href="index.html">CS-499 Capstone</a>
     </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/AlexLeetDev"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/alexleet"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <a href="#top" class="back-link">
+      <i class="fas fa-arrow-up"></i> Back to top
+    </a>
+
     <p>&copy; <span id="year"></span> Alex Leet. All rights reserved.</p>
   </footer>
 
